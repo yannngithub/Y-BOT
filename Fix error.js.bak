@@ -1,0 +1,303 @@
+//REST API - TIKTOD
+
+                    case 'tiktok':
+                    case 'tiktokvideo':
+                    case 'tt':
+                    case 't':
+                    if (isBanned) return reply(mess.only.benned)
+                    if (args.length == 0) return reply(`*Contoh:* ${prefix + command} https://vt.tiktok.com/ZSeMAUJbd/`)
+                    link = args[0]
+                    anu = await fetchJson(`https://hadi-api.herokuapp.com/api/tiktok?url=${link}`)
+                    anu = anu.result
+                    anu1 = anu.video
+                    anu2 = await getBuffer(anu1.original)
+                    client.sendMessage(from, anu2, video, { mimetype: 'video/mp4', quoted: mek })
+                    break
+                    case 'tiktokmusik':
+                    case 'tiktokmusic':
+                    case 'tiktokaudio':
+                    case 'ta':
+                    if (isBanned) return reply(mess.only.benned)
+                    if (args.length == 0) return reply(`*Contoh:* ${prefix + command} https://vt.tiktok.com/ZSeMAUJbd/`)
+                    link = args[0]
+                    anu = await fetchJson(`http://hadi-api.herokuapp.com/api/tiktok?url=${link}`)
+                    anu = anu.result
+                    anu1 = anu.audio_only
+                    anu2 = await getBuffer(anu1.original)
+                    client.sendMessage(from, anu2, document, { mimetype: 'audio/mp3',filename: getRandom('.mp3'), quoted: mek })
+                    break
+
+
+                    case 'tiktok':
+                    case 'tiktokvideo':
+                    case 'tt':
+                    case 't':
+                    if (isBanned) return reply(mess.only.benned)
+                    if (args.length == 0) return reply(`*Contoh:* ${prefix + command} https://vt.tiktok.com/ZSeMAUJbd/`)
+                    link = args[0]
+                    anu = await fetchJson(`https://api.dapuhy.xyz/api/socialmedia/musical?url=${link}&apikey=${dapapi}`)
+                    anu = anu.result
+                    anu1 = anu.mp4
+                    anu2 = await getBuffer(anu1.direct_link)
+                    client.sendMessage(from, anu2, video, { mimetype: 'video/mp4', quoted: mek })
+                    break
+                    case 'tiktokmusik':
+                    case 'tiktokmusic':
+                    case 'tiktokaudio':
+                    case 'ta':
+                    if (isBanned) return reply(mess.only.benned)
+                    if (args.length == 0) return reply(`*Contoh:* ${prefix + command} https://vt.tiktok.com/ZSeMAUJbd/`)
+                    link = args[0]
+                    anu = await fetchJson(`https://api.dapuhy.xyz/api/socialmedia/musical?url=${link}&apikey=${dapapi}`)
+                    anu = anu.result
+                    anu1 = anu.mp3
+                    anu2 = await getBuffer(anu1.direct_link)
+                    client.sendMessage(from, anu2, document, { mimetype: 'audio/mp3',filename: getRandom('.mp3'), quoted: mek })
+                    break
+
+
+//REST API - YOUTUBE
+
+                    case 'play':
+                     case 'yt':
+                        contoh = fs.readFileSync(`./src/contohdaftar.png`)
+                        if (!isRegistered) return reply( ind.noregis(), client.sendMessage(from, contoh, image, {quoted:mek, caption: `*Contoh daftar yang benar*`}))
+            if (isLimit(sender)) return
+                     if (isBanned) return reply(mess.only.benned)
+                     if (args.length == 0) return reply(`*Contoh:* .play Dj Tie Me Down`)
+                     query = args.join(" ")
+                     anu = await fetchJson(`https://cakrayp.herokuapp.com/api/youtube/music/search?query=${query}&apikey=cakrayp24Q6`)
+                     anu = anu.result
+                     thumb = anu.thumbnail
+                     anu1 = await getBuffer(thumb.standard)
+                     anu2 = await getBuffer(anu.downloads[3].url)
+                     client.sendMessage(from, anu1, image, { quoted: mek, caption: `${anu.title}` })
+                     client.sendMessage(from, anu2, document, { mimetype: 'audio/mp3',filename: `${anu.title}.mp3` , quoted: mek })
+                     await limitAdd(sender)
+                     break
+                     case 'playvideo':
+                     case 'ytvideo':
+                        contoh = fs.readFileSync(`./src/contohdaftar.png`)
+                        if (!isRegistered) return reply( ind.noregis(), client.sendMessage(from, contoh, image, {quoted:mek, caption: `*Contoh daftar yang benar*`}))
+            if (isLimit(sender)) return
+                     if (isBanned) return reply(mess.only.benned)
+                     if (args.length == 0) return reply(`*Contoh:* .playvideo Dj Tie Me Down`)
+                     query = args.join(" ")
+                     anu = await fetchJson(`https://cakrayp.herokuapp.com/api/youtube/video/search?query=${query}&type=default&apikey=cakrayp24Q6`)
+                     anu = anu.result
+                     thumb = anu.thumbnail
+                     anu1 = await getBuffer(thumb.standard)
+                     anu2 = await getBuffer(anu.downloads[1].url)
+                     client.sendMessage(from, anu1, image, { quoted: mek, caption: `${anu.title}` })
+                     client.sendMessage(from, anu2, video, { mimetype: 'video/mp4', quoted: mek })
+                     await limitAdd(sender)
+                     break
+
+
+                    case 'play':
+                     case 'yt':
+                        contoh = fs.readFileSync(`./src/contohdaftar.png`)
+                        if (!isRegistered) return reply( ind.noregis(), client.sendMessage(from, contoh, image, {quoted:mek, caption: `*Contoh daftar yang benar*`}))
+            if (isLimit(sender)) return
+                     if (isBanned) return reply(mess.only.benned)
+                     if (args.length == 0) return reply(`*Contoh:* .play Dj Tie Me Down`)
+                     query = args.join(" ")
+                     anu = await fetchJson(`https://api-xcoders.xyz/api/download/playmp3?query=${query}&apikey=LDQlH9CncZ`)
+                     anu = anu.result
+                     anu1 = await getBuffer(anu.thumbnail)
+                     anu2 = await getBuffer(anu.url)
+                     client.sendMessage(from, anu1, image, { quoted: mek, caption: `${anu.title}` })
+                     client.sendMessage(from, anu2, document, { mimetype: 'audio/mp3',filename: `${anu.title}.mp3` , quoted: mek })
+                     await limitAdd(sender)
+                     break
+                     case 'playvideo':
+                     case 'ytvideo':
+                        contoh = fs.readFileSync(`./src/contohdaftar.png`)
+                        if (!isRegistered) return reply( ind.noregis(), client.sendMessage(from, contoh, image, {quoted:mek, caption: `*Contoh daftar yang benar*`}))
+            if (isLimit(sender)) return
+                     if (isBanned) return reply(mess.only.benned)
+                     if (args.length == 0) return reply(`*Contoh:* .playvideo Dj Tie Me Down`)
+                     query = args.join(" ")
+                     anu = await fetchJson(`https://api-xcoders.xyz/api/download/playmp4?query=${query}&apikey=LDQlH9CncZ`)
+                     anu = anu.result
+                     anu1 = await getBuffer(anu.thumbnail)
+                     anu2 = await getBuffer(anu.url)
+                     client.sendMessage(from, anu1, image, { quoted: mek, caption: `${anu.title}` })
+                     client.sendMessage(from, anu2, video, { mimetype: 'video/mp4', quoted: mek })
+                     await limitAdd(sender)
+                     break
+
+
+//REST API - YOUTUBE LINK
+
+                    case 'ytmp3':
+                        contoh = fs.readFileSync(`./src/contohdaftar.png`)
+                        if (!isRegistered) return reply( ind.noregis(), client.sendMessage(from, contoh, image, {quoted:mek, caption: `*Contoh daftar yang benar*`}))
+                        if (isLimit(sender)) return
+                     if (isBanned) return reply(mess.only.benned)
+                     if (args.length == 0) return reply(`Contoh: .ytmp3 https://youtu.be/CRrf3h9vhp8`)
+                     link = args[0]
+                     anu = await fetchJson(`https://cakrayp.herokuapp.com/api/youtube/music?url=${link}&apikey=cakrayp24Q6`)
+                     anu = anu.result
+                     thumb = anu.thumbnail
+                     anu1 = await getBuffer(thumb.standard)
+                     anu2 = await getBuffer(anu.downloads[3].url)
+                     client.sendMessage(from, anu1, image, { quoted: mek, caption: `${anu.title}`})
+                     client.sendMessage(from, anu2, document, { mimetype: 'audio/mp3', filename: `${anu.title}.mp3`, quoted: mek})
+                     await limitAdd(sender)
+                     break
+
+                     case 'ytmp32':
+                        contoh = fs.readFileSync(`./src/contohdaftar.png`)
+                        if (!isRegistered) return reply( ind.noregis(), client.sendMessage(from, contoh, image, {quoted:mek, caption: `*Contoh daftar yang benar*`}))
+                        if (isLimit(sender)) return
+                     if (isBanned) return reply(mess.only.benned)
+                     if (args.length == 0) return reply(`Contoh: .ytmp3 https://youtu.be/CRrf3h9vhp8`)
+                     link = args[0]
+                     anu = await fetchJson(`http://zekais-api.herokuapp.com/youtube?url=${link}&apikey=ukBEufJT`)
+                     anu1 = await getBuffer(anu.thumb)
+                     anu2 = await getBuffer(anu.audio[0].url)
+                     client.sendMessage(from, anu1, image, { quoted: mek, caption: `${anu.title}`})
+                     client.sendMessage(from, anu2, document, { mimetype: 'audio/mp3', filename: `${anu.title}.mp3`, quoted: mek})
+                     await limitAdd(sender)
+                     break
+                    case 'ytmp42':
+                        contoh = fs.readFileSync(`./src/contohdaftar.png`)
+                        if (!isRegistered) return reply( ind.noregis(), client.sendMessage(from, contoh, image, {quoted:mek, caption: `*Contoh daftar yang benar*`}))
+                        if (isLimit(sender)) return
+                    if (args.length == 0) return reply(`*Contoh:* .ytmp4 https://youtu.be/CRrf3h9vhp8`)
+                    link = args[0]
+                    anu = await fetchJson(`http://zekais-api.herokuapp.com/youtube?url=${link}&apikey=ukBEufJT`)
+                    anu1 = await getBuffer(anu.thumb)
+                    anu2 = await getBuffer(anu.video[0].url)
+                    client.sendMessage(from, anu1, image, { quoted: mek, caption: `${anu.title}`})
+                    client.sendMessage(from, anu2, video, { mimetype: 'video/mp4', quoted: mek})
+                    await limitAdd(sender)
+                    break
+
+                    case 'ytmp4':
+                        contoh = fs.readFileSync(`./src/contohdaftar.png`)
+                        if (!isRegistered) return reply( ind.noregis(), client.sendMessage(from, contoh, image, {quoted:mek, caption: `*Contoh daftar yang benar*`}))
+                        if (isLimit(sender)) return
+                    if (args.length == 0) return reply(`*Contoh:* .ytmp4 https://youtu.be/CRrf3h9vhp8`)
+                    link = args[0]
+                    anu = await fetchJson(`https://cakrayp.herokuapp.com/api/youtube/video?url=${link}&apikey=cakrayp24Q6`)
+                    anu = anu.result
+                    thumb = anu.thumbnail
+                    anu1 = await getBuffer(thumb.standard)
+                    anu2 = await getBuffer(anu.downloads[1].url)
+                    client.sendMessage(from, anu1, image, { quoted: mek, caption: `${anu.title}`})
+                    client.sendMessage(from, anu2, video, { mimetype: 'video/mp4', quoted: mek})
+                    await limitAdd(sender)
+                    break
+//FACEBOOK DOWNLOADER
+
+                    case 'fb':
+                    case 'facebook':
+                        contoh = fs.readFileSync(`./src/contohdaftar.png`)
+                        if (!isRegistered) return reply( ind.noregis(), client.sendMessage(from, contoh, image, {quoted:mek, caption: `*Contoh daftar yang benar*`}))
+            if (isLimit(sender)) return
+                    if (isBanned) return reply(mess.only.benned)
+                     if (args.length == 0) return reply(`*Contoh:* .fb https://www.facebook.com/groups/526925218448628/permalink/591475845326898/`)
+                     link = args[0]
+                     anu = await fetchJson(`https://api.neoxr.eu.org/api/fb?url=${link}&apikey=yourkey`)
+                     anu1 = await getBuffer(anu.data[1].url)
+                     client.sendMessage(from, anu1, video, {mimetype: 'video/mp4', quoted:mek })
+                     await limitAdd(sender)
+                     break
+                    case 'fb2':
+                    case 'facebook2':
+                        contoh = fs.readFileSync(`./src/contohdaftar.png`)
+                        if (!isRegistered) return reply( ind.noregis(), client.sendMessage(from, contoh, image, {quoted:mek, caption: `*Contoh daftar yang benar*`}))
+            if (isLimit(sender)) return
+                    if (isBanned) return reply(mess.only.benned)
+                     if (args.length == 0) return reply(`*Contoh:* .fb https://www.facebook.com/groups/526925218448628/permalink/591475845326898/`)
+                     link = args[0]
+                     anu = await fetchJson(`https://api.neoxr.eu.org/api/fb?url=${link}&apikey=yourkey`)
+                     anu1 = await getBuffer(anu.data[0].url)
+                     client.sendMessage(from, anu1, video, {mimetype: 'video/mp4', quoted:mek })
+                     await limitAdd(sender)
+                     break
+                    case 'fb3':
+                    case 'facebook3':
+                        contoh = fs.readFileSync(`./src/contohdaftar.png`)
+                        if (!isRegistered) return reply( ind.noregis(), client.sendMessage(from, contoh, image, {quoted:mek, caption: `*Contoh daftar yang benar*`}))
+            if (isLimit(sender)) return
+                    if (isBanned) return reply(mess.only.benned)
+                     if (args.length == 0) return reply(`*Contoh:* .fb https://www.facebook.com/groups/526925218448628/permalink/591475845326898/`)
+                     link = args[0]
+                     anu = await fetchJson(`https://api.dapuhy.xyz/api/socialmedia/snapsave?url=${link}&apikey=alvianto`)
+                     anu = anu.result
+                     anu1 = await getBuffer(anu.preview)
+                     client.sendMessage(from, anu1, video, {mimetype: 'video/mp4', quoted:mek })
+                     await limitAdd(sender)
+                     break
+
+
+//STIKER
+                     case 'stickergif':
+             case 'stikergif':
+             case 'sgif':
+             case 'stiker':
+             case ' stiker':
+             case 'sticker':
+             case 's':
+                contohdaftar = fs.readFileSync(`./src/contohdaftar.png`)
+                        if (!isRegistered) return reply( ind.noregis(), client.sendMessage(from, contohdaftar, image, {quoted:mek, caption: `*Contoh daftar yang benar*`}))
+                        if (isBanned) return reply(mess.only.benned)
+                        if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
+                         const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
+                         const media = await client.downloadAndSaveMediaMessage(encmedia)
+                         ran = getRandom('.webp')
+                         await ffmpeg(`./${media}`)
+                             .input(media)
+                             .on('start', function (cmd) {
+                                 console.log(`Started : ${cmd}`)
+                             })
+                             .on('error', function (err) {
+                                 console.log(`Error : ${err}`)
+                                 fs.unlinkSync(media)
+                                 reply(mess.stick)
+                             })
+                             .on('end', function () {
+                                 console.log('Stiker Finished')
+                                 setTimeout( () => {}, 100)
+                                 buffer = fs.readFileSync(ran)
+                                 setTimeout( () => {
+                                 client.sendMessage(from, buffer, sticker, {quoted: mek})}, 500) 
+                                 setTimeout( () => {
+                                 fs.unlinkSync(media)
+                                 fs.unlinkSync(ran)}, 10)
+                             })
+                             .addOutputOptions([`-vcodec`,`libwebp`,`-vf`,`scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
+                             .toFormat('webp')
+                             .save(ran)
+                     } else if ((isMedia && mek.message.videoMessage.seconds < 30 || isQuotedVideo && mek.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.seconds < 30) && args.length == 0) {
+                         const encmedia = isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
+                         const media = await client.downloadAndSaveMediaMessage(encmedia)
+                         ran = getRandom('.webp')
+                         await ffmpeg(`./${media}`)
+                             .inputFormat(media.split('.')[1])
+                             .on('start', function (cmd) {
+                                 console.log(`Started : ${cmd}`)
+                             })
+                             .on('error', function (err) {
+                                 console.log(`Error : ${err}`)
+                                 fs.unlinkSync(media)
+                                 tipe = media.endsWith('.mp4') ? 'video' : 'gif'
+                                 reply(ind.stikga())
+                             })
+                             .on('end', function () {
+                                 console.log('Finish')
+                                 buffer = fs.readFileSync(ran)
+                                 client.sendMessage(from, buffer, sticker, {quoted: mek})
+                                 fs.unlinkSync(media)
+                                 fs.unlinkSync(ran)
+                             })
+                             .addOutputOptions([`-vcodec`,`libwebp`,`-vf`,`scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
+                             .toFormat('webp')
+                             .save(ran)
+                             } else {
+                         reply(`Kirim gambar dengan caption .sticker atau reply/tag gambar`)
+                     }
+                     break
